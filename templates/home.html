@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset Dashboard</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            color: #333;
+            width: 300px;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+          background: #f0f0f0;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #2a5298;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: #2a5298;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #1e3c72;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1><i class="fa-solid fa-chart-bar"></i> Dataset Collections & Display</h1>
+        <p>Explore and analyze datasets using our intelligent system</p>
+    </header>
+
+    <div class="container">
+
+        <!-- IRIS DATASET -->
+        <div class="card">
+            <h2>Iris Dataset <i class="fa-solid fa-seedling"></i></h2>
+            <p>
+                The Iris dataset is a classic dataset used for classification tasks.
+                It contains measurements of iris flowers including sepal length,
+                sepal width, petal length, and petal width.
+            </p>
+            <p><strong>Use Case:</strong> Machine Learning Classification</p>
+            <a href="/iris" class="btn">View Dataset</a>
+        </div>
+
+        <!-- TITANIC DATASET -->
+        <div class="card">
+            <h2>Titanic Dataset <i class="fa-solid fa-ship"></i></h2>
+            <p>
+                The Titanic dataset contains information about passengers aboard
+                the Titanic, including age, class, gender, and survival status.
+            </p>
+            <p><strong>Use Case:</strong> Survival Prediction Analysis</p>
+            <a href="/titanic" class="btn">View Dataset</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Dataset Dashboard | Built with Flask</p>
+    </footer>
+
+</body>
+</html>
