@@ -57,25 +57,6 @@ th {
     font-size: 0.8rem;
     letter-spacing: 1px;
 }
- .btn {
-
-            color: white;
-            padding: 12px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn:hover {
-            
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
         footer {
             text-align: center;
             padding: 20px;
@@ -88,32 +69,16 @@ th {
 <body>
 
     <header>
-        <h1> <i class="fa-solid fa-seedling"></i>Iris Dataset</h1>
+        <h1> <i class="fa-solid fa-seedling"></i>Iris Pie Chart</h1>
     </header>
- <a href="/" class="btn"><i class="fa-solid fa-house"></i> Home</a>
+
     <div class="container">
-<table>
-    <thead>
-    <tr>
-        <th>Sepal Length</th>
-        <th>Sepal Width</th>
-        <th>Petal Length</th>
-        <th>Petal Width</th>
-        <th>Species</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for index,row in dataset.iterrows() %}
-    <tr>
-        <td>{{ row['sepal_length'] }}</td>
-        <td>{{ row['sepal_width'] }}</td>
-        <td>{{ row['petal_length'] }}</td>
-        <td>{{ row['petal_width'] }}</td>
-        <td>{{ row['species'] }}</td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
+        {% if plot_url %}
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Iris Pie Chart" style="max-width: 100%; border-radius: 15px; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+        {% else %}
+            <p>Pie chart could not be generated.</p>
+        {% endif %}
+
     </div>
 
     <footer>
