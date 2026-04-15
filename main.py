@@ -1,5 +1,6 @@
 from flask import Flask,render_template
 app=Flask(__name__)
+import pandas as pd
 
 
 @app.route("/")
@@ -8,7 +9,8 @@ def home():
 
 @app.route("/iris")
 def iris():
-    return render_template("iris.html") 
+    dataset=pd.read_json("iris.json")
+    return render_template("iris.html", dataset=dataset)
 
 @app.route("/titanic")
 def titanic():          
