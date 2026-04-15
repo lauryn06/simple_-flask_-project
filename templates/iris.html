@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dataset Dashboard</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <title>IrisDataset Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
     <style>
         body {
             margin: 0;
-         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(to right, #1e3c72, #2a5298);
             color: white;
+            min-height: 100vh;
         }
 
         header {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         header h1 {
@@ -23,60 +24,72 @@
             margin-bottom: 10px;
         }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        /* Button Styling */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn i {
+            font-size: 1.1rem;
         }
 
         .container {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            padding: 40px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background: white;
-            color: #333;
-            width: 300px;
-            border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
         }
 
-        .card:hover {
-          background: #f0f0f0;
+        table {
+            background: rgba(255, 255, 255, 0.1);
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 1000px;
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
         }
 
-        .card h2 {
-            margin-top: 0;
-            color: #2a5298;
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .card p {
-            font-size: 0.95rem;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 15px;
-            background: #2a5298;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #1e3c72;
+        th {
+            background-color: rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
             font-size: 0.9rem;
             opacity: 0.8;
         }
@@ -86,26 +99,16 @@
 <body>
 
     <header>
-        <h1> <i class="fa-solid fa-seedling"></i>Iris Dataset</h1>
+        <h1><i class="fa-solid fa-seedling"></i> Iris Dataset</h1>
     </header>
 
-    <div class="container">
-<table>
-    <tr>
-        <th>Sepal Length</th>
-        <th>Sepal Width</th>
-        <th>Petal Length</th>
-        <th>Petal Width</th>
-        <th>Species</th>
-        </tr>
-    <tr>
-        <td>dataset.sepal_length</td>
-        <td>dataset.sepal_width</td>
-        <td>dataset.petal_length</td>
-        <td>dataset.petal_width</td>
-        <td>dataset.species</td>
-    </tr>
-</table>
+    <div class="nav-buttons">
+        <a href="/" class="btn"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="/iris_data" class="btn"><i class="fa-solid fa-table"></i> View Table</a>
+        <a href="/iris_bar" class="btn"><i class="fa-solid fa-chart-bar"></i> Bar Chart</a>
+        <a href="/iris_pie" class="btn"><i class="fa-solid fa-chart-pie"></i> Pie Chart</a>
+    </div>
+
     </div>
 
     <footer>
